@@ -2,18 +2,19 @@
   // Visit https://aka.ms/tsconfig to read more about this file
   "compilerOptions": {
     // File Layout
-    // "rootDir": "./src",
-    // "outDir": "./dist",
+     "rootDir": "./src",
+     "outDir": "./dist",
 
     // Environment Settings
     // See also https://aka.ms/tsconfig/module
     "module": "nodenext",
     "moduleResolution":"nodenext",
     "target": "es2022",
-    "types": [],
+    "types": [node],
+    
     "strict":true,
     "esModuleInterop": true,
-    "SkipLibCheck":true,
+    "skipLibCheck":true,
     "forceConsistentCasingInFileNames": true,
     "outDir":"./dist",
     "rootDir": "./src",
@@ -22,14 +23,15 @@
     // "types": ["node"],
     // and npm install -D @types/node
 
+    "esModuleInterop" = true,
+
+
     // Other Outputs
     "sourceMap": true,
-    "declaration": true,
-    "declarationMap": true,
 
     // Stricter Typechecking Options
     "noUncheckedIndexedAccess": true,
-    "exactOptionalPropertyTypes": true,
+    "exactOptionalPropertyTypes": false,
 
     // Style Options
     // "noImplicitReturns": true,
@@ -41,12 +43,13 @@
 
     // Recommended Options
 
-    "jsx": "react-jsx",
     "verbatimModuleSyntax": true,
     "isolatedModules": true,
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
     "skipLibCheck": true,
+
+    "sourceMap":true
   },
   "include":["src/**/*"]
 }
