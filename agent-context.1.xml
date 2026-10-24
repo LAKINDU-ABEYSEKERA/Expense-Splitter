@@ -1,0 +1,108 @@
+<repomix><file_summary>This file is a merged representation of the entire codebase, combined into a single document by Repomix.
+The content has been processed where empty lines have been removed, line numbers have been added, content has been formatted for parsing in xml style.<purpose>This file contains a packed representation of the entire repository&apos;s contents.
+It is designed to be easily consumable by AI systems for analysis, code review,
+or other automated processes.</purpose><file_format>The content is organized as follows:
+1. This summary section
+2. Repository information
+3. Directory structure
+4. Repository files (if enabled)
+5. Repository files, each consisting of:
+  - File path as an attribute
+  - Full contents of the file</file_format><usage_guidelines>- This file should be treated as read-only. Any changes should be made to the
+  original repository files, not this packed version.
+- When processing this file, use the file path to distinguish
+  between different files in the repository.
+- Be aware that this file may contain sensitive information. Handle it with
+  the same level of security as you would the original repository.</usage_guidelines><notes>- Some files may have been excluded based on .gitignore rules and Repomix&apos;s configuration
+- Binary files are not included in this packed representation. Please refer to the Repository Structure section for a complete list of file paths, including binary files
+- Files matching patterns in .gitignore are excluded
+- Files matching default ignore patterns are excluded
+- Empty lines have been removed from all files
+- Line numbers have been added to the beginning of each line
+- Content has been formatted for parsing in xml style
+- Files are sorted by Git change count (files with more changes are at the bottom)</notes></file_summary><directory_structure>src/
+  index.ts
+.gitignore
+package.json
+README.md
+tsconfig.json</directory_structure><files>This section contains the contents of the repository&apos;s files.<file path=".gitignore">1: node_modules/
+2: dist/
+3: .env
+4: .env.local
+5: *.log
+6: .DS_Store
+7: .vscode/
+8: .idea/</file><file path="README.md"> 1: # Expense Splitter API
+ 2: 
+ 3: A REST API for splitting expenses between groups, built from scratch
+ 4: to learn backend engineering.
+ 5: 
+ 6: ## Status
+ 7: 
+ 8: 🚧 Phase 0 — Setup
+ 9: 
+10: ## Stack
+11: 
+12: - TypeScript
+13: - Node.js
+14: - (PostgreSQL — coming soon)
+15: - (Express — coming soon)
+16: 
+17: ## Progress Log
+18: 
+19: - **Day 1:** Project initialized. Git configured. Repo created.</file><file path="src/index.ts"> 1: type ServerStatus = &quot;starting&quot; | &quot;running&quot; | &quot;stopped&quot;;
+ 2: interface StartupLog {
+ 3:     status: ServerStatus;
+ 4:     timestamp: Date;
+ 5:     version: string;
+ 6: }
+ 7: function logStartup(log: StartupLog): void {
+ 8:     const time = log.timestamp.toISOString();
+ 9:     console.log(`[${time}] status=${log.status} version=${log.version}`);
+10: }
+11: const startup: StartupLog = {
+12:     status: &quot;starting&quot;,
+13:     timestamp: new Date(),
+14:     version: &quot;0.0.1&quot;,
+15: };
+16: logStartup(startup);
+17: logStartup({...startup, status:&quot;running&quot;, timestamp: new Date()});</file><file path="package.json"> 1: {
+ 2:   &quot;name&quot;: &quot;expense-splitter&quot;,
+ 3:   &quot;version&quot;: &quot;1.0.0&quot;,
+ 4:   &quot;description&quot;: &quot;&quot;,
+ 5:   &quot;main&quot;: &quot;dist/index.js&quot;,
+ 6:   &quot;type&quot;: &quot;module&quot;,
+ 7:   &quot;scripts&quot;: {
+ 8:     &quot;dev&quot;: &quot;tsx watch src/index.ts&quot;,
+ 9:     &quot;build&quot;: &quot;tsc&quot;,
+10:     &quot;start&quot;: &quot;node dist/index.js&quot;
+11:   },
+12:   &quot;keywords&quot;: [],
+13:   &quot;author&quot;: &quot;&quot;,
+14:   &quot;license&quot;: &quot;ISC&quot;,
+15:   &quot;devDependencies&quot;: {
+16:     &quot;@types/node&quot;: &quot;^26.6.5&quot;,
+17:     &quot;tsx&quot;: &quot;^4.23.15&quot;,
+18:     &quot;typescript&quot;: &quot;^7.0.2&quot;
+19:   }
+20: }</file><file path="tsconfig.json"> 1: {
+ 2:   &quot;compilerOptions&quot;: {
+ 3:     &quot;target&quot;:&quot;es2022&quot;,
+ 4:     &quot;module&quot;: &quot;nodenext&quot;,
+ 5:     &quot;moduleResolution&quot;:&quot;nodenext&quot;,
+ 6:     &quot;rootDir&quot;: &quot;./src&quot;,
+ 7:     &quot;outDir&quot;:&quot;./dist&quot;,
+ 8: 
+ 9:     &quot;strict&quot;: true,
+10:     &quot;noUncheckedIndexedAccess&quot;:true,
+11:     &quot;esModuleInterop&quot;:true,
+12:     &quot;forceConsistentCasingInFileNames&quot;: true,
+13:     &quot;skipLibCheck&quot;: true,
+14:     &quot;verbatimModuleSyntax&quot;:true,
+15:     &quot;isolatedModules&quot;: true,
+16: 
+17:     &quot;types&quot;:[&quot;node&quot;],
+18:     &quot;sourceMap&quot;: true
+19:   },
+20:   &quot;include&quot;: [&quot;src/**/*&quot;]
+21: }</file></files></repomix>
