@@ -33,7 +33,7 @@ function isExpenseInput(value: unknown): value is ExpenseInput {
     return (
         typeof input.description === "string" &&
         typeof input.amount === "number" &&
-        Number.isFinite(input) &&
+        Number.isFinite(input.amount) &&
         typeof input.paidBy === "string"
     )
 }
