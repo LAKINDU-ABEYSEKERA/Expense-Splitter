@@ -70,9 +70,9 @@ app.get("/expenses",(req,res) => {
 app.get("/expenses/:id",(req,res) => {
     const id = Number(req.params.id);
 
-    const expense = db.expenses.find((expense) =>{
-        expense.id === id;
-    })
+    const expense = db.expenses.find((expense) => 
+        expense.id === id
+    )
 
     if(!expense) {
         res.status(404).json({
@@ -89,7 +89,7 @@ app.put("/expenses/:id",(req,res) => {
     const id = Number(req.params.id);
 
     const index = db.expenses.findIndex((expense) => {
-        expense.id === id
+        return expense.id === id
     })
 
     if(index === -1) {
@@ -119,15 +119,15 @@ app.put("/expenses/:id",(req,res) => {
 
     db.expenses[index] = updatedExpense;
 
-    res.status(204).json(updatedExpense)
+    res.status(200).json(updatedExpense)
 })
 
 app.delete("/expenses/:id",(req,res) => {
     const id = Number(req.params.id);
 
-    const index = db.expenses.findIndex((expense) => {
-        expense.id === id;
-    })
+    const index = db.expenses.findIndex((expense) => 
+        expense.id === id
+    )
 
     if (index === -1) {
         res.status(404).json({
@@ -139,9 +139,7 @@ app.delete("/expenses/:id",(req,res) => {
 
     db.expenses.splice(index,1);
 
-    res.status(204).json({
-        status: "Expense removed successfully"
-    })
+    res.status(204).send()
 })
 
 app.use((req,res) => {
